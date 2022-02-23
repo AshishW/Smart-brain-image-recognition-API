@@ -1,9 +1,11 @@
-const redisClient = require('./signin').redisClient;
+// const redisClient = require('./signin').redisClient;
+
+
 
 const handleSignout = (req, res) =>{
   const {authorization} = req.headers;
   if(authorization){
-      redisClient.del(authorization);
+      // redisClient.del(authorization);
       return res.json('sign out successful')
   }
   else{

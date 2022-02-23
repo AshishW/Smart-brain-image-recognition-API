@@ -1,4 +1,4 @@
-const redisClient = require('./signin').redisClient;
+// const redisClient = require('./signin').redisClient;
 
 const deleteAccount = (req, res, db) =>{
     const {id} = req.params;

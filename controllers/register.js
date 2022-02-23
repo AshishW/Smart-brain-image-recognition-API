@@ -3,7 +3,7 @@ const setToken = require('./signin').setToken;
 const createSessions = require('./signin').createSessions;
 const getAuthTokenId = require('./signin').getAuthTokenId;
 
-const redisClient = require('./signin').redisClient;
+// const redisClient = require('./signin').redisClient;
 
 const handleRegister = (db, bcrypt, req, res) => {
   const { email, name, password } = req.body;
