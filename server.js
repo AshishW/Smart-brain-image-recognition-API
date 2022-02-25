@@ -12,16 +12,28 @@ const signout = require('./controllers/signout');
 const removeAccount = require('./controllers/removeAccount');
 const auth = require('./controllers/authorization');
 
+
 const db = knex({
-  // connect to your own database here:
+  // connect to your own database here: (deployment)
   client: 'pg',
   connection: {
-    host : process.env.DB_HOST,
-    user : process.env.DB_USER,
-    password : process.env.DB_PASS,
-    database : process.env.DB_DATABASE
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
 });
+
+// const db = knex({
+//   // connect to your own database here: (local env)
+//   client: 'pg',
+//   connection: {
+//     host : process.env.DB_HOST,
+//     user : process.env.DB_USER,
+//     password : process.env.DB_PASS,
+//     database : process.env.DB_DATABASE
+//   }
+// });
 
 const app = express();
 
