@@ -43,7 +43,7 @@ const registerAuthentication = (db, bcrypt) => (req, res) =>{
        return data.id && data.email ? createSessions(data) : Promise.reject(data)
       })
       .then(session=> res.json(session))
-    .catch(err=>res.status(400).json(err))
+    .catch(err=>res.status(400).json('unable to register and authenticate'))
 }
 
 
