@@ -24,6 +24,7 @@ const db = knex({
   }
 });
 
+// uncomment the below code in local environment
 // const db = knex({
 //   // connect to your own database here: (local env)
 //   client: 'pg',
