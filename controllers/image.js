@@ -6,6 +6,14 @@ const app = new Clarifai.App({
 });
 
 const handleApiCall = (req, res) => {
+  
+  const face_detect_model = {
+    id: 'face-detection',
+    name: 'face-detection',
+    version: '6dc7e46bc9124c5c8824be4822abe105',
+    type: 'visual-detector',
+  }
+  
   app.models
     // HEADS UP! Sometimes the Clarifai Models can be down or not working as they are constantly getting updated.
     // A good way to check if the model you are using is up, is to check them on the clarifai website. For example,
@@ -16,7 +24,7 @@ const handleApiCall = (req, res) => {
     // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     // to:
     // .predict('c0c0ac362b03416da06ab3fa36fb58e3', req.body.input)
-    .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+    .predict(face_detect_model, req.body.input)
     .then(data => {
       res.json(data);
     })
